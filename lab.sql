@@ -15,15 +15,15 @@ SELECT * FROM products WHERE CAST(proof AS int) > 85;
 WHERE category_name in (“PEACH BRANDIES”, “FLAVORED VODKA”, “FLAVORED RUM”)
 
 -- 5.
-SELECT * FROM products WHERE category_name LIKE IMPORTED
+SELECT * FROM products WHERE category_name LIKE I"%IMPORTED%";
 
 -- 6.
 
-SELECT vendor FROM sales WHERE category_name LIKE ‘%IMPORTED%’ GROUP BY vendor ORDER BY SUM(total) DESC LIMIT 10
+SELECT vendor FROM sales WHERE category_name LIKE "%IMPORTED%" GROUP BY vendor ORDER BY SUM(total) DESC LIMIT 10
 
 -- 7.
 
-SELECT SUM(total), vendor, AVG(total) FROM sales WHERE category_name LIKE ‘%IMPORTED%’ GROUP BY vendor HAVING SUM(total) > 100000 ORDER BY AVG(total) DESC
+SELECT SUM(total), vendor, AVG(total) FROM sales WHERE category_name LIKE "%IMPORTED%" GROUP BY vendor HAVING SUM(total) > 100000 ORDER BY AVG(total) DESC
 
 -- 8.
 
